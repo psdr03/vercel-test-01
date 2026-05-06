@@ -1,0 +1,395 @@
+@use "../styles/colors" as colors;
+
+.page {
+  height: 100%;
+  color: white;
+
+  .navContainer {
+    padding: 0 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    size: 1rem;
+    height: 64px;
+    align-items: center;
+  }
+}
+
+.date {
+  font-size: 0.75rem;
+  color: grey;
+}
+
+.main {
+  .headerContainer {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    padding: 0 16px;
+    border-bottom: rgba(255, 255, 255, 0.3) solid 2px;
+
+    .headerTitle {
+      font-size: 48px;
+      flex-grow: 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .headerSubtitle {
+      font-size: 1rem;
+      line-height: 1.25rem;
+      width: 450px;
+    }
+  }
+
+  .featureContainer {
+    display: flex;
+    height: 800px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    .featureImageContainer {
+      min-width: 60vw;
+      position: relative;
+      overflow: hidden;
+
+      .featureImage {
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+        transition: filter 1s ease;
+      }
+
+      &:hover .featureImage {
+        filter: grayscale(0%);
+      }
+    }
+
+    .featureTextContainer {
+      padding: 32px;
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      // justify-content: flex-end;
+      align-items: flex-start;
+
+      .featureCategories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .categoryTag {
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.85);
+        padding: 4px 8px;
+        cursor: pointer;
+        transition:
+          color 0.2s ease,
+          border-color 0.2s ease;
+
+        &:hover {
+          color: #fff;
+          border-color: #fff;
+        }
+      }
+
+      .featureTitle {
+        font-size: 3rem;
+        line-height: 3rem;
+        margin: 0;
+      }
+
+      .featureSubtitle {
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.5rem;
+      }
+
+      .featureMeta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
+
+  .blogListContainer {
+    margin: 0 auto;
+    padding: 48px 32px 72px;
+    max-width: 960px;
+
+    .blogListHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 24px;
+
+      h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: 0.06em;
+      }
+
+      span {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.65);
+      }
+    }
+
+    .blogGrid {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blogCard {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 0;
+      height: 420px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+
+      &:hover {
+        cursor: pointer;
+        border-color: rgba(255, 255, 255, 0.45);
+        // transform: translateX(2px);
+      }
+    }
+
+    .blogCardImageContainer {
+      position: relative;
+      width: 320px;
+      min-width: 320px;
+      height: 320px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+    }
+
+    .blogCardImage {
+      object-fit: cover;
+      object-position: center;
+      filter: grayscale(100%);
+      transition: filter 1s ease;
+    }
+
+    .blogCard:hover .blogCardImage {
+      filter: grayscale(0%);
+    }
+
+    .blogCardBody {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .blogCardCategories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .blogCardCategoryTag {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: rgba(255, 255, 255, 0.78);
+      padding: 3px 8px;
+      font-size: 0.66rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .blogCardTitle {
+      margin: 0;
+      font-size: 1.9rem;
+      line-height: 2rem;
+    }
+
+    .blogCardSubtitle {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.4rem;
+    }
+
+    .blogCardMeta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.58);
+    }
+  }
+
+  .footerContainer {
+    border-top: 4px solid rgba(255, 255, 255, 0.28);
+    padding: 56px 32px 72px;
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+
+    .footerLeft {
+      max-width: 760px;
+    }
+
+    .footerTitle {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.44);
+    }
+
+    .footerAcknowledgement {
+      margin: 30px 0 0;
+      max-width: 760px;
+      font-size: 1rem;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footerRight {
+      display: flex;
+      gap: 96px;
+      padding-top: 4px;
+    }
+
+    .footerLinksColumn {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      a {
+        color: rgba(255, 255, 255, 0.44);
+        font-size: 1.05rem;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .main {
+    .featureContainer {
+      height: auto;
+      flex-direction: column;
+
+      .featureImageContainer {
+        min-width: 100%;
+        height: 480px;
+      }
+
+      .featureTextContainer {
+        padding-right: 32px;
+
+        .featureTitle {
+          font-size: 3.5rem;
+          line-height: 3.7rem;
+        }
+      }
+    }
+
+    .footerContainer {
+      .footerTitle {
+        font-size: 1.5rem;
+      }
+
+      .footerAcknowledgement {
+        font-size: 0.9rem;
+        max-width: 840px;
+      }
+
+      .footerRight {
+        gap: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .main {
+    .headerContainer {
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      gap: 16px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+
+      .headerSubtitle {
+        width: 100%;
+      }
+    }
+
+    .featureContainer {
+      .featureTextContainer {
+        .featureTitle {
+          font-size: 2.75rem;
+          line-height: 2.95rem;
+        }
+      }
+    }
+
+    .blogListContainer {
+      max-width: 100%;
+
+      .blogCard {
+        flex-direction: column;
+      }
+
+      .blogCardImageContainer {
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
+
+      .blogCardTitle {
+        font-size: 1.7rem;
+        line-height: 1.8rem;
+      }
+    }
+
+    .footerContainer {
+      padding: 40px 20px 56px;
+      flex-direction: column;
+      gap: 32px;
+
+      .footerTitle {
+        font-size: 1.2rem;
+      }
+
+      .footerAcknowledgement {
+        margin-top: 16px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .footerRight {
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .footerLinksColumn {
+        a {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}
